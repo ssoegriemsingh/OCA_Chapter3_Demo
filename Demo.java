@@ -10,6 +10,8 @@ public class Demo
 	int playerHand = 0;
 	int hit = 0;
 	
+	boolean done = false;
+	
 	Random r = new Random();
 	Scanner scanner = new Scanner(System.in);
 	
@@ -55,19 +57,21 @@ public class Demo
 		CalcWinner();
 	}
 	
+	private void log(String s) {
+		System.out.println(s);
+	}
+	
 	// Function to deal to dealer and show:
 	public void DealDealer()
 	{
-		dealerHand += r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
-		
 		while(dealerHand < NAME_OF_THE_GAME)
 		{
-			//System.out.println("Debug 1 - Dealer hand: " + dealerHand);
+			log("Debug 1 - Dealer hand: " + dealerHand);
 			
 			hit = r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
 			dealerHand += hit;
 			
-			//System.out.println("Debug 2 - Hit: " + hit);
+			log("Debug 2 - Hit: " + hit);
 		}
 		
 		if (dealerHand > NAME_OF_THE_GAME)
@@ -87,15 +91,17 @@ public class Demo
 	{
 		playerHand += r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
 		System.out.println(playername + " has: " + playerHand);
-		
-		if(playerHand > NAME_OF_THE_GAME)
-		{
-			System.out.println(playerHand + " BUSTED!");
-		}
-		else
-		{
-			HitOrStand();
-		}
+		do {
+			if(playerHand > NAME_OF_THE_GAME)
+			{
+				System.out.println(playerHand + " BUSTED!");
+				done = true;
+			}
+			else
+			{
+				HitOrStand();
+			}
+		} while (!done);
 	}
 	
 	// Function to hit or stand:
@@ -111,11 +117,11 @@ public class Demo
 		else if(input.equals("s"))
 		{
 			DealDealer();
+			done = true;
 		}
 		else
 		{
 			System.out.println("Please enter a valid command.");
-			HitOrStand();
 		}
 	}
 	
