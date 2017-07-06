@@ -13,7 +13,7 @@ public class Demo
 	Random r = new Random();
 	Scanner scanner = new Scanner(System.in);
 	
-	private static final int NUMBER_OF_CARDS_IN_SUIT = 13;
+	private static final int NUMBER_OF_CARDS_IN_SUIT = 12;
 	
 	private static final int NAME_OF_THE_GAME = 21;
 	
