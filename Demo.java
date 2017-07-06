@@ -13,6 +13,10 @@ public class Demo
 	Random r = new Random();
 	Scanner scanner = new Scanner(System.in);
 	
+	private static final int NUMBER_OF_CARDS_IN_SUIT = 13;
+	
+	private static final int NAME_OF_THE_GAME = 21;
+	
 	// Main:
 	public static void main(String[] args)
 	{
@@ -54,19 +58,19 @@ public class Demo
 	// Function to deal to dealer and show:
 	public void DealDealer()
 	{
-		dealerHand += r.nextInt(13) + 1;
+		dealerHand += r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
 		
-		while(dealerHand < 21)
+		while(dealerHand < NAME_OF_THE_GAME)
 		{
-			System.out.println("Debug 1 - Dealer hand: " + dealerHand);
+			//System.out.println("Debug 1 - Dealer hand: " + dealerHand);
 			
-			hit = r.nextInt(13) + 1;
+			hit = r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
 			dealerHand += hit;
 			
-			System.out.println("Debug 2 - Hit: " + hit);
+			//System.out.println("Debug 2 - Hit: " + hit);
 		}
 		
-		if (dealerHand > 21)
+		if (dealerHand > NAME_OF_THE_GAME)
 		{
 			dealerHand -= hit;
 		}
@@ -81,10 +85,10 @@ public class Demo
 	// Function to deal to player:
 	public void DealPlayer()
 	{
-		playerHand += r.nextInt(13) + 1;
+		playerHand += r.nextInt(NUMBER_OF_CARDS_IN_SUIT) + 1;
 		System.out.println(playername + " has: " + playerHand);
 		
-		if(playerHand > 21)
+		if(playerHand > NAME_OF_THE_GAME)
 		{
 			System.out.println(playerHand + " BUSTED!");
 		}
@@ -120,7 +124,7 @@ public class Demo
 		System.out.println("Dealer has: " + dealerHand);
 		System.out.println("Player has: " + playerHand);
 		
-		if (playerHand > 21)
+		if (playerHand > NAME_OF_THE_GAME)
 		{
 			System.out.println("To bad, you lost!");
 		}
