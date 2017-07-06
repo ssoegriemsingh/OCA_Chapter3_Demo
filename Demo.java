@@ -1,5 +1,3 @@
-// Testing a deleted branch.
-
 // Imports:
 import java.util.*;
 
