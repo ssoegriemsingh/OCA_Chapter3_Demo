@@ -58,7 +58,7 @@ public class Demo
 	}
 	
 	private void log(String s) {
-		System.out.println(s);
+		//System.out.println(s);
 	}
 	
 	// Function to deal to dealer and show:
