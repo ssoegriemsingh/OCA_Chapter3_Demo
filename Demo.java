@@ -2,7 +2,7 @@
 import java.util.*;
 
 // Start of class
-public class Demo
+public class Demo 
 {
 	// Global vars:
 	static String playername;
@@ -24,7 +24,7 @@ public class Demo
 		{
 			playername = "Player One";
 		}
-		else
+		else 
 		{
 			playername = args[0];
 		}
